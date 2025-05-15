@@ -1,80 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Berkshire Hathaway Redesign Portfolio</title>
-  <!-- Link to external stylesheet -->
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Redesigning for Accessibility: A UX Case Study</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
   <header>
-    <h1>Berkshire Hathaway Redesign</h1>
+    <h1>Redesigning for Accessibility</h1>
+    <p class="subtitle">Taking a look at the Berkshire Hathaway website</p>
     <nav>
-      <a href="https://www.berkshirehathaway.com/" target="_blank">Original Site</a>
-      <a href="https://your-redesign-demo.netlify.app/" target="_blank">Redesigned Site</a>
+      <ul>
+        <li><a href="#overview">Project Background</a></li>
+        <li><a href="#analysis">Current Website Analysis</a></li>
+        <li><a href="#redesign">Redesign Palette and Mockups</a></li>
+        <li><a href="#reflection">Redesign Implementation</a></li>
+        <li><a href="#takeaways">Conclusion</a></li>
+      </ul>
     </nav>
   </header>
 
-  <main class="container">
+  <div class="container">
     <section id="overview">
-      <h2>Project Overview</h2>
-      <p>This portfolio documents the responsive redesign of the Berkshire Hathaway homepage. The goal was to retain the brand’s no-frills aesthetic while adding bold, engaging visuals, improved usability, and accessibility across all devices.</p>
-    </section>
-
-    <section id="process">
-      <h2>Design Process</h2>
-      <p><strong>Key stages:</strong></p>
+     <p>Key issues identified in the original Website:</p>
+     <figure>
+        <img style="max-width: 1200;" src="berkshireog.png" alt="Screenshot of the original Berkshire Hathaway homepage">
+      </figure>
       <ul>
-        <li>Usability & accessibility audit of the original site</li>
-        <li>Wireframing responsive layouts</li>
-        <li>Visual style guide (vibrant accents, dynamic type, component states)</li>
-        <li>High-fidelity mockups for mobile, tablet, desktop</li>
-        <li>HTML/CSS implementation & responsive testing</li>
+        <li><strong>Efficiency:</strong> No search function; all of the clickable links are laid out unorganized </li>
+        <li><strong>Accessibility gaps via WebAim WAV:</strong> This tool noted the lack of ARIA labels which stands out as a huge accessibility oversight. However, there are no images on the page, 
+          so maybe this choice isn’t as problematic as it could be on a different website.</li>
+        <li><strong>Non-responsive layout:</strong> The two-column design breaks on narrow viewports, forcing horizontal scroll.</li>
+        <li><strong>Lack of visual hierarchy:</strong> All text and links look identical. There is no built 
+          in opportunity to intuitively learn where certain things might lead or where to find something important.</li>
       </ul>
+      
     </section>
 
-    <section id="gallery">
-      <h2>Mockup Gallery</h2>
+    <section id="analysis">
+       <h3>Visual Style Guide & Responsive Mockups</h3>
+
       <div class="gallery">
+
+         <p>
+        To modernize the design while preserving brand identity, we created a visual style guide that includes a color palette, typography, and responsive mockups.:
+      </p>
+        <img src="colordesign.png" alt="Color Palette Design">
+
+        <h2>Mobile mockup</h2>
         <figure>
-          <img src="images/mobile-mockup.png" alt="Mobile mockup preview" />
-          <figcaption>Mobile Layout</figcaption>
+          <img src="mobilemock.png" alt="Mobile mockup ">
         </figure>
+        <h2>Tablet mockup</h2>
         <figure>
-          <img src="images/tablet-mockup.png" alt="Tablet mockup preview" />
-          <figcaption>Tablet Layout</figcaption>
+          <img src="tabletmock.png" alt="Tablet mockup">
         </figure>
+        <h2>Desktop mockup</h2>
         <figure>
-          <img src="images/desktop-mockup.png" alt="Desktop mockup preview" />
-          <figcaption>Desktop Layout</figcaption>
+          <img src="desktopmock.png" alt="Desktop mockup">
         </figure>
       </div>
     </section>
-
-    <section id="screenshots">
-      <h2>Implementation Screenshots</h2>
-      <div class="gallery">
-        <figure>
-          <img src="images/code-preview.png" alt="HTML/CSS code preview" />
-          <figcaption>Code Preview</figcaption>
-        </figure>
-        <figure>
-          <img src="images/wave-report.png" alt="WAVE accessibility report" />
-          <figcaption>Accessibility Audit</figcaption>
-        </figure>
-      </div>
     </section>
 
-    <section id="conclusion">
-      <h2>Conclusion & Next Steps</h2>
-      <p>The redesign balances Berkshire Hathaway’s sturdy brand identity with an energetic, modern UI. Next: add subtle micro-interactions, keyboard-driven nav, and performance optimizations.</p>
-    </section>
-  </main>
+    <section id="redesign">
+      
+       <h2>Implementation</h2>
+      <p>
+        The redesign was built using vanilla HTML & CSS emploting the design and accessibility concerns we identified:
+      </p>
+    <a href="https://www.berkshirehathaway.com/" target="_blank">Original Website</a> •
+        <a href="https://elokoyi1989.github.io/berskshire-redesign/" target="_blank"> Redesign</a>
+      <img style="max-width: 1200;"  src="redesign.png" alt="Screenshot of the redesigned Berkshire Hathaway homepage">
 
-  <footer>
-    <p>&copy; 2025 Your Name &mdash; Crafted with creativity</p>
-  </footer>
+   
+
+     
+    </section>
+
+
+    <section id="takeaways">
+      <h2>Conclusion</h2>
+      <p>  This redesign demonstrates that even the most bare bones brand aesthetic can be made more
+         accessible and responsive without losing its core identity and visual style.
+        </p>
+    </section>
+  </div>
+
 </body>
 </html>

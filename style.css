@@ -1,131 +1,107 @@
-/* Reset & Base */
-* { box-sizing: border-box; margin: 0; padding: 0; }
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tagesschrift&display=swap');
+
+/* Base Styles */
+*, *::before, *::after { box-sizing: border-box; }
 body {
-  font-family: 'Source Sans Pro', sans-serif;
-  background: #f5f5f5;
+  font-family:sans-serif;
+  background-color: #720303;
   color: #333;
+  margin: 0;
+  padding: 0;
   line-height: 1.6;
+  font-size: 18px; /* increased base font size for readability */
 }
+a { color: #0066cc; text-decoration: none; }
+a:hover { text-decoration: underline; }
 
-/* Container */
-.container {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 3rem 1.5rem;
-}
-
-/* Header */
-header {
-  background: linear-gradient(135deg, #0B2545 0%, #333333 100%);
+/* Header & Footer */
+header, footer {
+  background: #000;
   color: #fff;
+  padding: 20px;
   text-align: center;
-  padding: 2rem 1rem;
 }
 header h1 {
-  font-family: 'Merriweather', serif;
-  font-size: 2.5rem;
-  letter-spacing: 1px;
-  margin-bottom: 0.5rem;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-}
-nav a {
-  display: inline-block;
-  background: #F5F5F5;
-  color: #0B2545;
-  padding: 0.6rem 1.2rem;
-  margin: 0 0.5rem;
-  border-radius: 30px;
   font-weight: 600;
-  transition: transform 0.2s, background 0.2s;
+  font-size: 2.5rem; /* larger heading */
+  margin-bottom: 10px;
 }
-nav a:hover {
-  background: #0B2545;
-  color: #fff;
-  transform: translateY(-2px);
+.subtitle {
+  font-size: 1.25rem;
+  margin-top: 5px;
 }
-
-/* Section Titles */
-section h2 {
-  font-family: 'Merriweather', serif;
-  font-size: 2rem;
-  color: #0B2545;
-  margin-bottom: 1rem;
-  border-left: 5px solid #DA291C; /* bold accent */
-  padding-left: 1rem;
-}
-
-/* Text & Lists */
-p {
-  margin-bottom: 1rem;
-  font-size: 1.1rem;
-}
-ul {
+nav ul {
   list-style: none;
-  margin-left: 0;
-  padding-left: 0;
+  padding: 0;
+  margin: 10px 0 0;
+}
+nav ul li {
+  display: inline;
+  margin: 0 10px;
+}
+nav ul li a {
+  color: #e6ebff;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+/* Container spans wide */
+.container {
+  width: 60%;       
+  max-width: none;  
+  margin: 0 auto;  
+  padding: 2rem;
+}
+
+/* Sections */
+section {
+  background-color: #fff;
+  border: 1px solid #d0d7de;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  padding: 3rem;      /* increased padding */
+  margin-bottom: 30px;
+  transition: transform 0.2s;
+}
+section h2, section h3 {
+  color: #1a1a2e;
+  margin-bottom: 1rem;
+}
+
+ul {
+  padding-left: 20px;
 }
 ul li {
-  position: relative;
-  padding-left: 1.5rem;
-  margin-bottom: 0.8rem;
-  font-size: 1.05rem;
-}
-ul li::before {
-  content: '●';
-  position: absolute;
-  left: 0;
-  color: #DA291C; /* vibrant bullet */
-  font-size: 1.2rem;
-  line-height: 1;
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
 }
 
-/* Gallery */
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 1.5rem;
-  margin-top: 1rem;
-}
-.gallery figure {
-  background: #fff;
-  border: 2px solid #777;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  transition: box-shadow 0.3s;
-}
-.gallery figure:hover {
-  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-}
-.gallery img {
-  width: 100%;
-  display: block;
-}
-.gallery figcaption {
-  padding: 0.8rem;
-  font-size: 0.9rem;
-  text-align: center;
-  color: #555;
+
+/* Images constrained */
+img {
+  max-width: 770px;
+  height:auto;
+  margin: 20px 0;
+  border-radius: 6px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-/* Conclusion & Footer */
-footer {
-  text-align: center;
-  padding: 2rem 1rem;
-  font-size: 0.9rem;
-  background: #333;
-  color: #fff;
-}
+/* Footer text */
 footer p {
-  max-width: 600px;
-  margin: 0 auto;
+  font-size: 1rem;
 }
 
-/* Responsive tweaks */
-@media (min-width: 600px) {
-  section { padding: 2rem 0; }
+/* Responsive typography */
+@media (max-width: 600px) {
+  body { font-size: 16px; }
+  header h1 { font-size: 2rem; }
+  .subtitle { font-size: 1.1rem; }
+  section { padding: 2rem; }
 }
-@media (min-width: 900px) {
-  header h1 { font-size: 3rem; }
-  section h2 { font-size: 2.5rem; }
+
+@media (min-width: 800px) {
+  body { font-size: 20px; }
+  section { padding: 4rem; }
 }
